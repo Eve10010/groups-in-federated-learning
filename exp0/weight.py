@@ -8,13 +8,14 @@ Created on Tue Dec  1 20:35:28 2020
 import pickle
 import numpy as np
 
-weight = np.zeros((10,10))
-file = []
-data = []
-for i in range(10):
-    x = "data"+str(i)+".plk"
-    file = open(x,"rb")
-    data = pickle.load(file)
-    weight[i][i] = len(data)
-    file.close()
-print (weight)
+def get_data_weight():  
+    weight = np.zeros((10,10))
+    file = []
+    data = []
+    for i in range(10):
+        x = "data"+str(i)+".plk"
+        file = open(x,"rb")
+        data = pickle.load(file)
+        weight[i][i] = len(data)
+        file.close()
+    return weight

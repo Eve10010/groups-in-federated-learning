@@ -1,5 +1,12 @@
 # -*- coding: utf-8 -*-
 """
+Created on Fri Dec 25 16:40:22 2020
+
+@author: asus
+"""
+
+# -*- coding: utf-8 -*-
+"""
 Created on Fri Dec 25 16:03:46 2020
 
 @author: asus
@@ -44,7 +51,11 @@ while True:
     except StopIteration:
         break;
 
-for i in range(10):  
+for i in range(9):  
     with open(file_name[i],'wb') as i:
         pickle.dump(data[i], i)
-
+        pickle.dump(data[i+1], i)
+        
+with open(file_name[9],'wb') as f9:
+        pickle.dump(data[9], f9)
+        pickle.dump(data[0], f9)
